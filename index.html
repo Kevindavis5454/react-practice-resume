@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Hello World</title>
+</head>
+<body>
+<div id="application-root"></div>
+
+<script
+        src="https://unpkg.com/react@16/umd/react.development.js">
+</script>
+<script
+        src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+</script>
+<script
+        src="https://unpkg.com/babel-standalone@6/babel.min.js">
+</script>
+<script type="text/babel">
+
+    const resumeName = 'Sally Student';
+    const address = `4545 Hollywood Blvd, Hollywood CA, 8675309`;
+    const email = `SallyStudent@Studentemail.com`;
+    const phoneNumber =`800-867-5309`
+    const picture = `https://ia.media-imdb.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_UX214_CR0,0,214,317_AL_.jpg`
+
+    function App(props) {
+        return (
+            <div>
+            <header>
+                <h1>{resumeName}</h1>
+                <img src={picture} alt="Image of Sally Student"></img>
+            </header>
+            <address>
+               <h2>Contact Info:</h2>
+               <ul>
+                   <li>{phoneNumber}</li>
+                   <li>{email}</li>
+                   <li>{address}</li>
+               </ul>
+            </address>
+                <main>
+                    <section>
+                        <h2>Employment Info:</h2>
+                        <ul><h4>Joe Joe's Diner</h4>
+                            <li>Title: Waitress</li>
+                            <li>Dates of Employment: 08/2007-Current</li>
+                            <li>Duties: Serve the needs of all customers</li>
+                        </ul>
+                        <ul>
+                            <h4>Bee Bee's Pizza Joint</h4>
+                            <li>Title: Cashier</li>
+                            <li>Dates of Employment: 08/2005-08/2007</li>
+                            <li>Duties: Proper Cash handling and customer service</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Education</h2>
+                        <ul><h4>Falafel High School</h4>
+                            <li>Graduated with Diploma in 2004</li>
+                        </ul>
+                        <ul><h4>Falafel Community College</h4>
+                            <li>Graduated with an Associates in Art</li>
+                        </ul>
+                    </section>
+                </main>
+            </div>
+        );
+    }
+
+    // Nested elements inside the App
+    ReactDOM.render(
+        <App />,
+        document.querySelector('#application-root')
+    );
+</script>
+</body>
+</html>
